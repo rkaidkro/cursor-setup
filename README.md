@@ -22,10 +22,11 @@ curl -fsSL https://raw.githubusercontent.com/rkaidkro/cursor-setup/main/install.
 |------|---------|----------------|
 | `api-key-errors.mdc` | Fail-soft handling for missing API keys | ✅ |
 | `your-role-atlas.mdc` | Autonomous systems/infra agent for Atlas server | ✅ |
-| `your-role-work-swe-aid.mdc` | Senior SWE assistant for CSIRO work | ✅ |
 | `your-role_sous.mdc` | Kitchen-brigade themed infra agent ("SOUS") | Disabled |
 | `your-role-HA.mdc` | Home Assistant automation agent | Disabled |
 | `your-role-parra.mdc` | Parallel agent orchestration system | Disabled |
+| `your-role-work-swe-aid.mdc` | Senior SWE assistant for enterprise work | Disabled |
+| `your-role-legal-aid.mdc` | Legal assistant persona | Disabled |
 
 ### Commands (`.cursor/commands/`)
 

@@ -35,10 +35,11 @@ echo "📥 Downloading rules..."
 RULES=(
   "api-key-errors.mdc"
   "your-role-atlas.mdc"
-  "your-role-work-swe-aid.mdc"
   "your-role_sous.mdc.disable"
   "your-role-HA.mdc.disable"
   "your-role-parra.mdc.disable"
+  "your-role-work-swe-aid.mdc.disable"
+  "your-role-legal-aid.mdc.disable"
 )
 
 for rule in "${RULES[@]}"; do
