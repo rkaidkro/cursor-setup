@@ -1,0 +1,47 @@
+---
+alwaysApply: true
+---
+
+# rule: handle-api-key-errors
+
+## Behavior
+If any agent or tool detects:
+- Missing API key
+- Invalid API key
+- Undeclared environment variable
+- Authentication/auth error caused by missing secrets
+
+Then follow this workflow:
+
+1. Do not stop work.
+   Continue executing every step that can run without the key.
+   Produce partial outputs instead of halting.
+
+2. Automatically search for keys:
+   - /Users/m/dev/.env 
+   - Scan for files named or similar to:
+       .env
+       env
+       ENV
+       ENB
+       *.env*
+   - Scan sibling project folders too.
+   - Only report key names or presence. Never values.
+
+3. Notify the user with high-visibility alerting.
+   Use emojis like: 🚨🔥⚠️❗
+   Format:
+   🚨 Missing API key detected
+   🔍 Searched parent folder and found: <list>
+   ❗ Still needed: <list>
+
+4. Never block. Never crash.
+   If the key is required for a step, produce the closest possible partial output and mark what is missing.
+
+5. Never fabricate or guess secrets.
+   You may recommend variable names but never generate values.
+
+## Goal
+Agents behave fail-soft.
+Missing keys never stop progress.
+Errors are obvious, loud, and actionable.
