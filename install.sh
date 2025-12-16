@@ -40,6 +40,8 @@ RULES=(
   "your-role-parra.mdc.disable"
   "your-role-work-swe-aid.mdc.disable"
   "your-role-legal-aid.mdc.disable"
+  "your-role-v4-codec.mdc.disable"
+  "your-role-v5-codec.mdc.disable"
 )
 
 for rule in "${RULES[@]}"; do

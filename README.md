@@ -27,6 +27,8 @@ curl -fsSL https://raw.githubusercontent.com/rkaidkro/cursor-setup/main/install.
 | `your-role-parra.mdc` | Parallel agent orchestration system | Disabled |
 | `your-role-work-swe-aid.mdc` | Senior SWE assistant for enterprise work | Disabled |
 | `your-role-legal-aid.mdc` | Legal assistant persona | Disabled |
+| `your-role-v4-codec.mdc` | V4 codec persona | Disabled |
+| `your-role-v5-codec.mdc` | V5 codec persona | Disabled |
 
 ### Commands (`.cursor/commands/`)
 
