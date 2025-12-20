@@ -23,6 +23,7 @@ This repo is a grab-bag of experiments. New learnings are **not** consistently b
 | File | What it does |
 |------|--------------|
 | `api-key-errors.mdc` | Fail-soft handling for missing/invalid API keys. If something needs a secret, it keeps going where possible, searches common `.env` locations, and clearly reports what’s still missing. |
+| `your-role.mdc` | A compact “default” autonomous agent role for general projects. Intentionally short to avoid burning context; meant as a baseline you can copy and specialize per repo. |
 | `your-role-atlas.mdc` | An ops/infra-focused persona for the Atlas GPU server. Biases toward SSH-first workflows, containers/services, and “run it + verify it” behavior for long-running GPU tasks. |
 | `your-role_sous.mdc.disable` | A “SOUS chef” style persona: breaks work into a tight operational loop and pushes for disciplined execution/verification. Kept disabled by default because it’s more of a style experiment. |
 | `your-role-HA.mdc.disable` | Home Assistant automation persona. Focuses on practical HA changes, safety (non-destructive defaults), and validation of automations. |
