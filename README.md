@@ -18,19 +18,19 @@ curl -fsSL https://raw.githubusercontent.com/rkaidkro/cursor-setup/main/install.
 
 ### Rules (`.cursor/rules/`)
 
-The rules below are ordered **oldest → newest** by the first git commit that introduced them (filesystem “creation time” is not meaningful after cloning, and GitHub’s UI often rounds timestamps to “N days ago”).
+This repo is a grab-bag of experiments. New learnings are **not** consistently back-propagated into older files, so some rules may look “cool” but be outdated or overly verbose. In practice, giant rule files are often counterproductive because they eat into the context window.
 
-> Note: Extremely long rule files are usually counterproductive because they eat into the model’s context window and may be partially ignored/truncated in practice.
-
-- `api-key-errors.mdc` (**always applied**, introduced `2025-12-16T16:17:52+11:00`): Fail-soft handling for missing/invalid API keys; keeps agents moving and loudly reports what key is missing.
-- `your-role-atlas.mdc` (**always applied**, introduced `2025-12-16T16:17:52+11:00`): Infra/ops persona focused on the Atlas GPU server (SSH, containers, services).
-- `your-role_sous.mdc.disable` (**disabled**, introduced `2025-12-16T16:17:52+11:00`): Kitchen-brigade themed infra persona (“SOUS”) for structured operational workflows.
-- `your-role-HA.mdc.disable` (**disabled**, introduced `2025-12-16T16:17:52+11:00`): Home Assistant automation persona.
-- `your-role-parra.mdc.disable` (**disabled**, introduced `2025-12-16T16:17:52+11:00`): Parallel agent orchestration persona for running many agents concurrently.
-- `your-role-work-swe-aid.mdc.disable` (**disabled**, introduced `2025-12-16T16:29:49+11:00`): Senior SWE assistant persona for enterprise-style development.
-- `your-role-legal-aid.mdc.disable` (**disabled**, introduced `2025-12-16T16:29:49+11:00`): Legal assistant persona.
-- `your-role-v4-codec.mdc.disable` (**disabled**, introduced `2025-12-16T16:31:37+11:00`): V4 codec persona.
-- `your-role-v5-codec.mdc.disable` (**disabled**, introduced `2025-12-16T16:31:37+11:00`): V5 codec persona.
+| File | What it does |
+|------|--------------|
+| `api-key-errors.mdc` | Fail-soft handling for missing/invalid API keys. If something needs a secret, it keeps going where possible, searches common `.env` locations, and clearly reports what’s still missing. |
+| `your-role-atlas.mdc` | An ops/infra-focused persona for the Atlas GPU server. Biases toward SSH-first workflows, containers/services, and “run it + verify it” behavior for long-running GPU tasks. |
+| `your-role_sous.mdc.disable` | A “SOUS chef” style persona: breaks work into a tight operational loop and pushes for disciplined execution/verification. Kept disabled by default because it’s more of a style experiment. |
+| `your-role-HA.mdc.disable` | Home Assistant automation persona. Focuses on practical HA changes, safety (non-destructive defaults), and validation of automations. |
+| `your-role-parra.mdc.disable` | Parallel-agent orchestration persona. Optimizes for running lots of agents concurrently without blocking, and for keeping workstreams coordinated. |
+| `your-role-work-swe-aid.mdc.disable` | A more “enterprise SWE assistant” persona. Tends toward conservative design, incremental changes, and strong engineering hygiene. |
+| `your-role-legal-aid.mdc.disable` | Legal assistant persona. Geared toward extracting requirements, summarizing documents, and drafting/structuring legal-ish text (not legal advice). |
+| `your-role-v4-codec.mdc.disable` | Codec persona experiment (v4). Focuses on structured reasoning about encoding/decoding, formats, and debugging media pipelines. |
+| `your-role-v5-codec.mdc.disable` | Codec persona experiment (v5). Similar goals as v4 with a different emphasis/style; kept disabled by default. |
 
 ### Commands (`.cursor/commands/`)
 
