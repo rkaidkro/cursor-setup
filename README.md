@@ -18,17 +18,19 @@ curl -fsSL https://raw.githubusercontent.com/rkaidkro/cursor-setup/main/install.
 
 ### Rules (`.cursor/rules/`)
 
-| File | Purpose | Always Applied |
-|------|---------|----------------|
-| `api-key-errors.mdc` | Fail-soft handling for missing API keys | ✅ |
-| `your-role-atlas.mdc` | Autonomous systems/infra agent for Atlas server | ✅ |
-| `your-role_sous.mdc` | Kitchen-brigade themed infra agent ("SOUS") | Disabled |
-| `your-role-HA.mdc` | Home Assistant automation agent | Disabled |
-| `your-role-parra.mdc` | Parallel agent orchestration system | Disabled |
-| `your-role-work-swe-aid.mdc` | Senior SWE assistant for enterprise work | Disabled |
-| `your-role-legal-aid.mdc` | Legal assistant persona | Disabled |
-| `your-role-v4-codec.mdc` | V4 codec persona | Disabled |
-| `your-role-v5-codec.mdc` | V5 codec persona | Disabled |
+The rules below are ordered **oldest → newest** by the first git commit that introduced them (filesystem “creation time” is not meaningful after cloning).
+
+> Note: Extremely long rule files are usually counterproductive because they eat into the model’s context window and may be partially ignored/truncated in practice.
+
+- `api-key-errors.mdc` (**always applied**, introduced `2025-12-16`): Fail-soft handling for missing/invalid API keys; keeps agents moving and loudly reports what key is missing.
+- `your-role-atlas.mdc` (**always applied**, introduced `2025-12-16`): Infra/ops persona focused on the Atlas GPU server (SSH, containers, services).
+- `your-role_sous.mdc.disable` (**disabled**, introduced `2025-12-16`): Kitchen-brigade themed infra persona (“SOUS”) for structured operational workflows.
+- `your-role-HA.mdc.disable` (**disabled**, introduced `2025-12-16`): Home Assistant automation persona.
+- `your-role-parra.mdc.disable` (**disabled**, introduced `2025-12-16`): Parallel agent orchestration persona for running many agents concurrently.
+- `your-role-work-swe-aid.mdc.disable` (**disabled**, introduced `2025-12-16`): Senior SWE assistant persona for enterprise-style development.
+- `your-role-legal-aid.mdc.disable` (**disabled**, introduced `2025-12-16`): Legal assistant persona.
+- `your-role-v4-codec.mdc.disable` (**disabled**, introduced `2025-12-16`): V4 codec persona.
+- `your-role-v5-codec.mdc.disable` (**disabled**, introduced `2025-12-16`): V5 codec persona.
 
 ### Commands (`.cursor/commands/`)
 
